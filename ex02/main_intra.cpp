@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 18:05:42 by eperperi          #+#    #+#             */
-/*   Updated: 2025/01/13 18:21:27 by eperperi         ###   ########.fr       */
+/*   Updated: 2025/01/17 18:21:32 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,16 @@ int main(void)
     }
     //SCOPE
     {
+		Array<int> empty;
         Array<int> tmp = numbers;
         Array<int> test(tmp);
+		
+		empty.printArray();
+		tmp.printArray();
+		test.printArray();
     }
 
+	
     for (int i = 0; i < MAX_VAL; i++)
     {
         if (mirror[i] != numbers[i])
@@ -40,11 +46,16 @@ int main(void)
             std::cerr << "didn't save the same value!!" << std::endl;
             return 1;
         }
-		std::cout << i << " : " << numbers[i] << ", " << mirror[i] << std::endl;
+		std::cout << i + 1 << " : " << numbers[i] << ", " << mirror[i] << std::endl;
     }
+	
+	// numbers.printArray();
+	// std::cout << std::endl;
+
     try
     {
         numbers[2] = 0;
+		std::cout << "Access succesfull" << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -53,6 +64,7 @@ int main(void)
     try
     {
         numbers[80] = 0;
+		std::cout << "Access succesfull" << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -62,7 +74,12 @@ int main(void)
     for (int i = 0; i < MAX_VAL; i++)
     {
         numbers[i] = rand();
-		std::cout << i << " : " << numbers[i] << std::endl;
+		std::cout << i + 1 << " : " << numbers[i] << ", " << mirror[i] << std::endl;
+		// if (mirror[i] != numbers[i])
+        // {
+        //     std::cerr << "didn't save the same value!!" << std::endl;
+        //     return 1;
+        // }
     }
     delete [] mirror;//
     return 0;

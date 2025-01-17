@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 17:51:38 by eperperi          #+#    #+#             */
-/*   Updated: 2025/01/13 18:08:38 by eperperi         ###   ########.fr       */
+/*   Updated: 2025/01/17 15:53:03 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Array
 				return *this;
 			if (this->_size != copy._size)
 			{
-				delete [] _array;
+				delete [] this->_array;
 				this->_size = copy._size;
 				this->_array = new T[this->_size];
 			}
@@ -64,5 +64,11 @@ class Array
 				}
 		};
 
-		void printArray();
+		void printArray()
+		{
+			for (size_t i = 0; i < this->_size; i++)
+			{
+				std::cout << "Position : " << i + 1 << ",  index : " << this->_array[i] << std::endl;
+			}
+		}
 };

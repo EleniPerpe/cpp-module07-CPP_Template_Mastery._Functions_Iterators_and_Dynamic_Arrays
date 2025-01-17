@@ -6,11 +6,11 @@
 #    By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/19 15:07:19 by eperperi          #+#    #+#              #
-#    Updated: 2025/01/10 13:21:39 by eperperi         ###   ########.fr        #
+#    Updated: 2025/01/17 16:03:30 by eperperi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	template
+NAME			=	iter
 
 CC				=	c++ -g -fsanitize=address
 

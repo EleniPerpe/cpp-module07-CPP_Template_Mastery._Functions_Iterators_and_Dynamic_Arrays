@@ -6,11 +6,13 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:01:26 by eperperi          #+#    #+#             */
-/*   Updated: 2025/01/10 14:41:22 by eperperi         ###   ########.fr       */
+/*   Updated: 2025/01/17 16:30:05 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
+
+void roundFloat(float& f);
 
 int main()
 {
@@ -22,11 +24,27 @@ int main()
 	int floatArraySize = sizeof(floatArray) / sizeof(floatArray[0]);
 
 	iter(intArray, intArraySize, printArray<int>);
+	std::cout << std::endl;
+	iter(intArray, intArraySize, addTwo<int>);
+	std::cout << std::endl;
+	iter(intArray, intArraySize, printArray<int>);
+	std::cout << std::endl;
 	iter(intArray, intArraySize, printExtra<int>);
 	std::cout << std::endl;
 	iter(charArray, charArraySize, printArray<char>);
+	std::cout << std::endl;
+	iter(charArray, charArraySize, addTwo<char>);
+	std::cout << std::endl;
 	iter(charArray, charArraySize, printExtra<char>);
 	std::cout << std::endl;
 	iter(floatArray, floatArraySize, printArray<float>);
+	std::cout << std::endl;	
+	iter(floatArray, floatArraySize, roundFloat);
+	std::cout << std::endl;
 	iter(floatArray, floatArraySize, printExtra<float>);
+}
+
+void roundFloat(float& f)
+{
+	f = ::round(f);
 }
