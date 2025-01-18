@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:02:17 by eperperi          #+#    #+#             */
-/*   Updated: 2025/01/17 16:24:03 by eperperi         ###   ########.fr       */
+/*   Updated: 2025/01/18 16:48:01 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,11 @@ void printExtra(T array)
 template <typename T>
 void addTwo(T& array)
 {
-	array += 2;
+		array += 2;
+}
+
+template <typename T>
+void addTwoStrings(T& array)
+{
+		array = "2 of " + array;
 }

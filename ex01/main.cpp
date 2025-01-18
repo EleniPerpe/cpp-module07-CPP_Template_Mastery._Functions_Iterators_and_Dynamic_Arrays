@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:01:26 by eperperi          #+#    #+#             */
-/*   Updated: 2025/01/17 16:30:05 by eperperi         ###   ########.fr       */
+/*   Updated: 2025/01/18 16:48:33 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,26 +22,35 @@ int main()
 	int charArraySize = sizeof(charArray);
 	float floatArray[] = {43.7, 78.9, 23.0, 32.78, 56.788, 90.3};
 	int floatArraySize = sizeof(floatArray) / sizeof(floatArray[0]);
+	std::string stringArray[] = {"apple", "banana", "pineapple", "orange", "kiwi"};
+	int stringArraySize = sizeof(stringArray) / sizeof(stringArray[0]);
 
 	iter(intArray, intArraySize, printArray<int>);
 	std::cout << std::endl;
 	iter(intArray, intArraySize, addTwo<int>);
 	std::cout << std::endl;
-	iter(intArray, intArraySize, printArray<int>);
-	std::cout << std::endl;
 	iter(intArray, intArraySize, printExtra<int>);
 	std::cout << std::endl;
+	
 	iter(charArray, charArraySize, printArray<char>);
 	std::cout << std::endl;
 	iter(charArray, charArraySize, addTwo<char>);
 	std::cout << std::endl;
 	iter(charArray, charArraySize, printExtra<char>);
 	std::cout << std::endl;
+	
 	iter(floatArray, floatArraySize, printArray<float>);
 	std::cout << std::endl;	
 	iter(floatArray, floatArraySize, roundFloat);
 	std::cout << std::endl;
 	iter(floatArray, floatArraySize, printExtra<float>);
+	std::cout << std::endl;
+
+	iter(stringArray, stringArraySize, printArray<std::string>);
+	std::cout << std::endl;	
+	iter(stringArray, stringArraySize, addTwoStrings<std::string>);
+	std::cout << std::endl;
+	iter(stringArray, stringArraySize, printExtra<std::string>);
 }
 
 void roundFloat(float& f)

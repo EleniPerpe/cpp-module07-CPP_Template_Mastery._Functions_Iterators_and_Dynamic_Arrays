@@ -6,7 +6,7 @@
 /*   By: eperperi <eperperi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 18:05:42 by eperperi          #+#    #+#             */
-/*   Updated: 2025/01/17 18:21:32 by eperperi         ###   ########.fr       */
+/*   Updated: 2025/01/18 16:49:22 by eperperi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,14 @@ int main(void)
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
     srand(time(NULL));
+	
     for (int i = 0; i < MAX_VAL; i++)
     {
         const int value = rand();
         numbers[i] = value;
         mirror[i] = value;
     }
-    //SCOPE
+
     {
 		Array<int> empty;
         Array<int> tmp = numbers;
